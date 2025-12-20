@@ -1,7 +1,18 @@
-import AppRoutes from './routes/AppRoutes'
+import { Helmet } from "react-helmet-async";
+import AppRoutes from "@/routes/AppRoutes";
+import { SEO } from "@/config/seo.config";
 
-const App= () => {
-  return <AppRoutes />
-}
+const App = () => {
+  return (
+    <>
+      <Helmet>
+        <title>{SEO.default.title}</title>
+        <meta name="description" content={SEO.default.description} />
+      </Helmet>
 
-export default App
+      <AppRoutes />
+    </>
+  );
+};
+
+export default App;
