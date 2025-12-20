@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { SEO } from "@/config/seo.config";
+import { profile } from "@/data/profile.data";
 
 const Home = () => {
   return (
@@ -9,7 +10,11 @@ const Home = () => {
         <meta name="description" content={SEO.home.description} />
       </Helmet>
 
-      <div>Home</div>
+      <div>
+        <h1>{profile.name}</h1>
+        <p>{profile.role}</p>
+
+      </div>
     </>
   );
 };
