@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { SEO } from "@/config/seo.config";
 import { profile } from "@/data/profile.data";
+import Hero from "./components/Hero";
+import AboutPreview from "./components/AboutPreview";
 
 const Home = () => {
   return (
@@ -13,7 +15,8 @@ const Home = () => {
       <div>
         <h1>{profile.name}</h1>
         <p>{profile.role}</p>
-
+        <Hero />
+      <AboutPreview />
       </div>
     </>
   );
