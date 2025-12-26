@@ -1,12 +1,18 @@
 import { profile } from "@/data/profile.data";
-
+import { motion } from "framer-motion";
+import { useReveal } from "@/hooks/useRevel.js";
 const Hero = () => {
+  const { ref, isVisible } = useReveal();
   return (
-    <section
+    <motion.section
+      ref={ref}
       id="hero"
-      className="min-h-[80vh] flex flex-col justify-center gap-4 px-6"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="min-h-screen flex flex-col justify-center gap-4 px-6"
     >
-      <h1 className="text-4xl font-bold tracking-tight">
+      <h1 className="text-4xl font-bold">
         Hi, I’m {profile.name}
       </h1>
 
@@ -17,23 +23,7 @@ const Hero = () => {
       <p className="max-w-xl text-gray-700 dark:text-gray-300">
         {profile.tagline}
       </p>
-
-      <div className="mt-4 flex gap-4">
-        <a
-          href="/projects"
-          className="rounded bg-black px-5 py-2 text-white dark:bg-white dark:text-black"
-        >
-          View Projects
-        </a>
-
-        <a
-          href="#about-preview"
-          className="rounded border px-5 py-2"
-        >
-          About Me
-        </a>
-      </div>
-    </section>
+    </motion.section>
   );
 };
 
