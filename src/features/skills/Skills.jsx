@@ -2,7 +2,7 @@ import React from "react";
 import { skills }  from "@/data/skills.data.js";
 const Skills = () => {
     return(
-       <section id="skills" className="px-6 py-20">
+       <section id="skills" className="px-6 py-20 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-12">Skills</h1>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
