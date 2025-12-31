@@ -13,8 +13,6 @@ const Home = () => {
       </Helmet>
 
       <div>
-        <h1>{profile.name}</h1>
-        <p>{profile.role}</p>
         <Hero />
       <AboutPreview />
       <ProjectsPreview />
