@@ -2,6 +2,7 @@ import { profile } from "@/data/profile.data";
 import { motion } from "framer-motion";
 import { useReveal } from "@/hooks/useRevel";
 import { Link   } from "react-router-dom";
+import Button from "@/components/ui/Button"
 const Hero = () => {
   const { ref, isVisible } = useReveal();
   return (
@@ -45,21 +46,26 @@ const Hero = () => {
 
 
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
-        <a
-          href="/resume.pdf"
-          download
-          className="bg-indigo-600 text-white w-full sm:w-auto px-4 py-2 text-sm hover:bg-indigo-700 rounded-md text-center"
-        >
-         Download Resume
-       </a>    
-        <Link
-         to="/projects"
-           className="bg-gray-300 border w-full sm:w-auto px-4 py-2 text-sm rounded-md text-center hover:bg-gray-200"
-          >
-           View Projects
-        </Link>
+  <Button
+    as="a"
+    href="/resume.pdf"
+    download
+    variant="primary"
+    className="w-full sm:w-auto"
+  >
+    Download Resume
+  </Button>
 
-      </div>
+  <Button
+    as="link"
+    to="/projects"
+    variant="secondary"
+    className="w-full sm:w-auto"
+  >
+    View Projects
+  </Button>
+</div>
+
     </div>
     </div>
 
